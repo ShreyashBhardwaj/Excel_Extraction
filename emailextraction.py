@@ -3,19 +3,18 @@ from docx import Document
 import os
 
 # Folder path where your Excel files are stored
-folder_path = r"C:\Users\Shreyash Bhardwaj\Downloads\Excel Extraction"
+folder_path = r"C:/Users/Shreyash Bhardwaj/Desktop/Excel_Extraction"
 
 # List of Excel files
 excel_files = [
-    "Udaipur.xlt.xls",
-    "Raipur .xlt.xls",
-    "Noida.xlt.xls",
-    "Ludhiana.xls",
-    "Lucknow.xlt.xls",
-    "jalandhar.xls",
-    "jaipur.xls",
-    "Chandigarh.xls",
-    "amritsar.xls"
+    # "asansol.xlt.xls",
+    "Bajaj AMC Training Enrollment Form - NISM 13 Common Derivative  (Responses).xlsx",
+    # "Bankura.xlsx",
+    # "Bardhaman.xlt.xls",
+    # "Durgapur.xlsx",
+    # "Howrah.xlt.xls",
+    # "Kharagpur.xls",
+    # "Siliguri.xls"
 ]
 
 # Process each Excel file
