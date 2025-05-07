@@ -2,13 +2,13 @@ import pandas as pd
 from docx import Document
 import os
 
-# Folder path where your Excel files are stored
+# Folder path where your Excel and CSV files are stored
 folder_path = r"C:/Users/Shreyash Bhardwaj/Desktop/Excel_Extraction"
 
-# List of Excel files
+# List of files to process
 excel_files = [
     # "asansol.xlt.xls",
-    "Bajaj AMC Training Enrollment Form - NISM 13 Common Derivative  (Responses).xlsx",
+    "File.csv",
     # "Bankura.xlsx",
     # "Bardhaman.xlt.xls",
     # "Durgapur.xlsx",
@@ -17,20 +17,28 @@ excel_files = [
     # "Siliguri.xls"
 ]
 
-# Process each Excel file
+# Process each file
 for file in excel_files:
     try:
         ext = os.path.splitext(file)[1].lower()
-        engine = 'openpyxl' if ext == '.xlsx' else 'xlrd'
+        file_path = os.path.join(folder_path, file)  # Construct full file path first
 
-        # Construct full file path
-        file_path = os.path.join(folder_path, file)
+        # Read based on extension
+        if ext == '.xlsx':
+            df = pd.read_excel(file_path, engine='openpyxl')
+        elif ext == '.xls':
+            df = pd.read_excel(file_path, engine='xlrd')
+        elif ext == '.csv':
+            df = pd.read_csv(file_path)
+        else:
+            print(f"⚠️ Skipping unsupported file type: {file}")
+            continue
 
-        # Read the Excel file
-        df = pd.read_excel(file_path, engine=engine)
+        # Extract Column F (index 5) from excel
+        #column_data = df.iloc[:, 5].dropna().astype(str).tolist()
 
-        # Extract Column F (index 5)
-        column_data = df.iloc[:, 5].dropna().astype(str).tolist()
+        # Use the below one for when using csv
+        column_data = df['Email(required)'].dropna().astype(str).tolist()
         comma_separated = ', '.join(column_data)
 
         # Create and save the Word document
