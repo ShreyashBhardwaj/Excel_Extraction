@@ -8,7 +8,7 @@ folder_path = r"C:/Users/Shreyash Bhardwaj/Desktop/Excel_Extraction"
 # List of files to process
 excel_files = [
     # "asansol.xlt.xls",
-    "File.csv",
+    # "File.csv",
     # "Bankura.xlsx",
     # "Bardhaman.xlt.xls",
     # "Durgapur.xlsx",
