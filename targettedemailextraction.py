@@ -31,7 +31,7 @@ filtered_df["City_clean"] = filtered_df["City"].str.lower().str.strip()
 unique_cities = set()
 for city in filtered_df["City_clean"]:
     # Get just the main word like "ahmedabad" from "ahmedabad city"
-    match = re.search(r"(ahmedabad|patna|ranchi|muzaffarpur|durgapur|howrah|kharagpur|bardhaman|bangalore|mumbai|pune|delhi|kolkata)", city)
+    match = re.search(r"(chennai|ahmedabad|patna|ranchi|muzaffarpur|durgapur|howrah|kharagpur|bardhaman|bangalore|mumbai|pune|delhi|kolkata)", city)
     if match:
         unique_cities.add(match.group(1))
 
