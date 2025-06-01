@@ -7,14 +7,13 @@ folder_path = r"C:/Users/Shreyash Bhardwaj/Desktop/Excel_Extraction"
 
 # List of files to process
 excel_files = [
-    # "asansol.xlt.xls",
-    # "File.csv",
-    # "Bankura.xlsx",
+    "Muzaffarpur.xls",
+    "Patna.xls",
     # "Bardhaman.xlt.xls",
     # "Durgapur.xlsx",
     # "Howrah.xlt.xls",
     # "Kharagpur.xls",
-    # "Siliguri.xls"
+    "Ranchi.xls"
 ]
 
 # Process each file
@@ -35,10 +34,10 @@ for file in excel_files:
             continue
 
         # Extract Column F (index 5) from excel
-        #column_data = df.iloc[:, 5].dropna().astype(str).tolist()
+        column_data = df.iloc[:, 5].dropna().astype(str).tolist()
 
         # Use the below one for when using csv
-        column_data = df['Email(required)'].dropna().astype(str).tolist()
+        # column_data = df['Email(required)'].dropna().astype(str).tolist()
         comma_separated = ', '.join(column_data)
 
         # Create and save the Word document
