@@ -7,13 +7,13 @@ folder_path = r"C:/Users/Shreyash Bhardwaj/Desktop/Excel_Extraction"
 
 # List of files to process
 excel_files = [
-    "Muzaffarpur.xls",
-    "Patna.xls",
+    # "Bajaj_SIF_traning_data.xlsx",
+    # "SEBI_Investment_Advisors_Data.xlsx",
     # "Bardhaman.xlt.xls",
     # "Durgapur.xlsx",
     # "Howrah.xlt.xls",
     # "Kharagpur.xls",
-    "Ranchi.xls"
+    # "Ranchi.xls"
 ]
 
 # Process each file
@@ -34,7 +34,7 @@ for file in excel_files:
             continue
 
         # Extract Column F (index 5) from excel
-        column_data = df.iloc[:, 5].dropna().astype(str).tolist()
+        column_data = df.iloc[:, 2].dropna().astype(str).tolist()
 
         # Use the below one for when using csv
         # column_data = df['Email(required)'].dropna().astype(str).tolist()
